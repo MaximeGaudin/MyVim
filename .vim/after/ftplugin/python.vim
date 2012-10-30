@@ -1,6 +1,6 @@
 " Python
 autocmd BufNewFile *.py 0r ~/.vim/templates/python
-autocmd BufReadPost *.py set spell 
+autocmd BufReadPost *.py set spell | set spelllang=en
 
 " + Flake8
 let g:flake8_ignore="E128"

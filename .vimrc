@@ -30,6 +30,7 @@ set expandtab
 set shiftwidth=4
 set nu
 set spelllang=en,fr
+set noshowmode
 
 if version >= 703
     set rnu
@@ -83,4 +84,8 @@ let g:Powerline_symbols = 'fancy'
 autocmd BufReadPost .git/COMMIT_EDITMSG set spell
 
 " Markdown
-autocmd BufReadPost *.md,*.markdown set spell
+autocmd BufReadPost *.md,*.markdown,*.md.html set filetype=markdown | set spell
+autocmd BufNewFile *.md.html 0r ~/.vim/templates/strapdown | 6j | set filetype=markdown | set spell 
+
+" Language tool (grammar check)
+let g:languagetool_jar=$HOME . '/.vim/language_tool/LanguageTool.jar'
