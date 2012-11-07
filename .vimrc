@@ -22,6 +22,7 @@ Bundle 'git://github.com/ervandew/supertab.git'
 Bundle 'git://github.com/gg/python.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/vim-scripts/pylint.vim.git'
+Bundle 'git://github.com/davidhalter/jedi-vim.git'
 
 filetype indent plugin on
 
