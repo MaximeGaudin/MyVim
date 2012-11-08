@@ -1,5 +1,4 @@
-syntax on
-"
+syntax on "
 " Vundle configuration
 filetype off                   
 
@@ -14,7 +13,7 @@ Bundle 'FuzzyFinder'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'https://github.com/scrooloose/nerdtree.git'
 Bundle 'git://github.com/jistr/vim-nerdtree-tabs.git'
-Bundle 'git://github.com/nvie/vim-flake8.git'
+" Bundle 'git://github.com/nvie/vim-flake8.git'
 Bundle 'taglist.vim'
 Bundle 'git://github.com/plasticboy/vim-markdown.git' 
 Bundle 'git://github.com/ivanov/vim-ipython.git'
@@ -22,7 +21,8 @@ Bundle 'git://github.com/ervandew/supertab.git'
 Bundle 'git://github.com/gg/python.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/vim-scripts/pylint.vim.git'
-Bundle 'git://github.com/davidhalter/jedi-vim.git'
+" Bundle 'git://github.com/davidhalter/jedi-vim.git'
+Bundle 'git://github.com/klen/python-mode.git'
 
 filetype indent plugin on
 
@@ -91,3 +91,6 @@ autocmd BufNewFile *.md.html 0r ~/.vim/templates/strapdown | 6j | set filetype=m
 
 " Language tool (grammar check)
 let g:languagetool_jar=$HOME . '/.vim/language_tool/LanguageTool.jar'
+
+" Folding
+noremap zo za
