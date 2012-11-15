@@ -34,6 +34,11 @@ set nu
 set spelllang=en,fr
 set noshowmode
 
+" Keep the cursor centered
+set scrolloff=1000
+nnoremap j jzz
+nnoremap } }zz
+
 if version >= 703
     set rnu
 endif
@@ -76,7 +81,7 @@ highlight SpellBad ctermfg=Black ctermbg=DarkGray cterm=NONE
 " General coding
 au BufWinEnter *.py let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
-noremap zz {v}=
+noremap <leader><leader> {v}=
 nnoremap gr gd[{V%:s/<C-R>///gc<left><left><left>
 
 " Powerline
