@@ -1,10 +1,11 @@
 " Python
-autocmd BufNewFile *.py 0r ~/.vim/templates/python
-autocmd BufReadPost *.py set spell | set spelllang=en
+set spell 
+set spelllang=en 
 
-" + Flake8
-"let g:flake8_ignore="E128"
-" autocmd BufWritePost *.py call Flake8()
+if !filereadable(expand('%:p'))
+    0r ~/.vim/templates/python
+    6j
+endif
 
 " + NerdTree
 let g:nerdtree_tabs_open_on_console_startup=1

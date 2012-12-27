@@ -5,23 +5,16 @@ filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'L9'
-Bundle 'FuzzyFinder'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'https://github.com/scrooloose/nerdtree.git'
+Bundle 'git://github.com/tpope/vim-fugitive.git'
+Bundle 'git://github.com/Lokaltog/vim-powerline.git'
+Bundle 'git://github.com/scrooloose/nerdtree.git'
 Bundle 'git://github.com/jistr/vim-nerdtree-tabs.git'
-" Bundle 'git://github.com/nvie/vim-flake8.git'
-Bundle 'taglist.vim'
 Bundle 'git://github.com/plasticboy/vim-markdown.git' 
 Bundle 'git://github.com/ivanov/vim-ipython.git'
 Bundle 'git://github.com/ervandew/supertab.git'
 Bundle 'git://github.com/gg/python.vim.git'
 Bundle 'git://github.com/scrooloose/nerdcommenter.git'
 Bundle 'git://github.com/vim-scripts/pylint.vim.git'
-" Bundle 'git://github.com/davidhalter/jedi-vim.git'
 Bundle 'git://github.com/klen/python-mode.git'
 
 filetype indent plugin on
@@ -36,12 +29,8 @@ set noshowmode
 
 " Keep the cursor centered
 set scrolloff=1000
-nnoremap j jzz
-nnoremap } }zz
-
-if version >= 703
-    set rnu
-endif
+"nnoremap j jzz
+"nnoremap } }zz
 
 " Encoding
 set encoding=utf-8
@@ -78,6 +67,11 @@ highlight Search ctermfg=Black ctermbg=LightGreen cterm=NONE
 highlight ErrorMsg ctermfg=Black ctermbg=LightBlue cterm=NONE
 highlight SpellBad ctermfg=Black ctermbg=DarkGray cterm=NONE
 
+highlight DiffAdd term=reverse cterm=bold ctermbg=darkGreen ctermfg=lightGray
+highlight DiffChange term=reverse cterm=bold ctermbg=darkCyan ctermfg=black 
+highlight DiffText term=reverse cterm=bold ctermbg=gray ctermfg=black 
+highlight DiffDelete term=reverse cterm=NONE ctermbg=red ctermfg=black 
+
 " General coding
 au BufWinEnter *.py let w:m2=matchadd('ErrorMsg', '\%>80v.\+', -1)
 
@@ -97,5 +91,11 @@ autocmd BufNewFile *.md.html 0r ~/.vim/templates/strapdown | 6j | set filetype=m
 " Language tool (grammar check)
 let g:languagetool_jar=$HOME . '/.vim/language_tool/LanguageTool.jar'
 
+" HTML
+"autocmd BufReadPost *.html NERDTree
+
 " Folding
 noremap zo za
+
+noremap Y "+yy 
+noremap zz {v}=j
